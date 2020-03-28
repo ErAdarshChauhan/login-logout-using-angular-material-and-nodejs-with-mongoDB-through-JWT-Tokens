@@ -24,4 +24,13 @@ export class AuthService {
       params: new HttpParams().append('token',localStorage.getItem('token'))
     });
   }
+
+  isLoggedIn() {
+    if (localStorage.getItem('token')) {
+      return true;
+    }
+    return false;
+  }
+
+  
 }

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent],
+  declarations: [DashboardComponent, PostComponent],
   imports: [
     CommonModule,
     AdminRoutingModule

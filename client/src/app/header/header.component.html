@@ -12,9 +12,21 @@
             </div>
            
             <div class="nav navbar-nav flex-row ml-auto">
-                <a class="nav-item nav-link" routerLink="./auth/registration">Signup</a>
+              <div *ngIf="isLoggedIn">
+                <a class="nav-item nav-link" routerLink="/admin/dashboard">Dashboard</a>
+              </div>
+              <div *ngIf="isLoggedIn">
+                <a class="nav-item nav-link" routerLink="/admin/post">Post</a>
+              </div>
+              <div *ngIf="isLoggedIn">
+                <a class="btn nav-item nav-link btn-size" (click)="logout()">Logout</a>
+              </div>
+              <div *ngIf="!isLoggedIn">
                 <a class="nav-item nav-link" routerLink="/auth/login">Login</a>
-                
+              </div>
+              <div *ngIf="!isLoggedIn">
+                <a class="nav-item nav-link" routerLink="/auth/registration">Sign Up</a>
+              </div>
             </div>
 
         </div>

@@ -46,6 +46,8 @@
                                     <td>
                                         <div class="form-group text-center ">
                                             <button mat-button  class="btn form-control mat-tab-label-active text-white"  [disabled]="!loginForm.valid">Login</button>
+                                            &nbsp;
+                                            <button mat-button  class="btn form-control mat-tab-label-active text-white" (click)="resetForm()"  [disabled]="!loginForm.valid">Reset</button>
                                         </div>
                                     </td>
                                 </tr>

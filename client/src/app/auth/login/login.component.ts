@@ -29,6 +29,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  resetForm(){
+    if(this.loginForm.invalid)
+      return ;
+      this.loginForm.reset();
+  }
+
   postLoginForm(){
     if(this.loginForm.invalid)
     return;

@@ -19,7 +19,13 @@
                      <div class="example-container">
                        <form [formGroup]="registerForm" (ngSubmit)="postRegisterForm()" class="example-form">
                          <table class="">
-                             <mat-card-title class="text-danger"><h4>{{successMessage}}</h4></mat-card-title>
+                             <div *ngIf="statusError; else errorMsg">
+                                <mat-card-title class="text-success"><h4>{{successMessage}}</h4></mat-card-title>
+                             </div>
+                             <ng-template #errorMsg>
+                                <mat-card-title class="text-danger"><h4>{{successMessage}}</h4></mat-card-title>
+                            </ng-template>
+                            
                              <tr>
                                  <td>
                                      <mat-form-field class="example-full-width">
@@ -65,13 +71,16 @@
                                  <td>
                                      <div class="form-group text-center ">
                                          <button mat-button  class="btn form-control mat-tab-label-active text-white"  [disabled]="!registerForm.valid">submit</button>
+                                         &nbsp;
+                                         <button mat-button  class="btn form-control mat-tab-label-active text-white" (click)="resetForm()"  [disabled]="!registerForm.valid">Reset</button>
                                      </div>
                                  </td>
+                                
                              </tr>
                          </table>
                          <br><br>
                          <div class="text-center">
-                             <a routerLink="/auth/login">User Login ?</a>
+                             <a routerLink="/auth/login">Already have Account | Login ?</a>
                              &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                              <a href="">Forgot Password ?</a>
                          </div>

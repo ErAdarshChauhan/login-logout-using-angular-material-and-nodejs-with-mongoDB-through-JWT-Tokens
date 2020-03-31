@@ -9,7 +9,19 @@ var jwt = require('jsonwebtoken');
 // });
 
 // API to register employee
-router.post('/register', function(req,res,next){
+router.post('/register', async function(req,res,next){
+
+  const userEmail = await Employee.findOne({
+    email: req.body.email
+  });
+
+  if (userEmail) {
+    console.log(userEmail);
+    return res
+      .status(409)
+      .json({ message: 'Email already exist.' });
+  }else{
+      
   console.log(req.body);
   var employee = new Employee({
     username : req.body.username,
@@ -27,6 +39,8 @@ router.post('/register', function(req,res,next){
   promise.catch(function(err){
     return res.status(501).json({message:'Error occured while registering Employee.'});
   });
+  }
+
 });
 
 //API to Login 

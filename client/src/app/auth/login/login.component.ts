@@ -55,8 +55,13 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/admin/dashboard']);
         },
         error =>{
-            this.Error = true,
-            this.message = 'Invalid Credentials..'
+          //client side validation
+         //   this.Error = true,
+           // this.message = 'Invalid Credentials..'
+        // server side validations
+           if (error.error.message) {
+            this.message = error.error.message;
+          }
         }
       );
     }

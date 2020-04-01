@@ -56,10 +56,15 @@ export class RegisterationComponent implements OnInit {
     //call service method to register user
     this.service.registerUser(formData).subscribe(
       data =>{
+        
         this.successMessage = "User Registered Successfully...";
+        
         this.statusError = true;
         this.registerForm.reset();
-        //this.router.navigate(['/auth/login'], {relativeTo: this.activatedRoute});
+        setTimeout(() => {
+          this.router.navigate(['/auth/login'], {relativeTo: this.activatedRoute});
+        }, 3000);
+        
       },
       err => {
         this.statusError = false;

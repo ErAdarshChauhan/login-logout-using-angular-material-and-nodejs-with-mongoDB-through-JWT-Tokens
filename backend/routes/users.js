@@ -20,7 +20,8 @@ router.post('/register', async function(req,res,next){
     return res
       .status(409)
       .json({ message: 'Email already exist.' });
-  }else{
+  }
+  else{
       
   console.log(req.body);
   var employee = new Employee({
@@ -57,7 +58,7 @@ router.post('/login', function(req,res,next){
           return res.status(200).json(token);
       }
       else{
-        res.status(501).json({message:'Invalid Credentials..'});
+        res.status(501).json({message:'Invalid Credentials......'});
       }
     }
     else{

@@ -17,9 +17,10 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { AuthService } from './auth.service';
+import { ResetComponent } from './reset/reset.component';
 
 @NgModule({
-  declarations: [RegisterationComponent, LoginComponent],
+  declarations: [RegisterationComponent, LoginComponent, ResetComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,

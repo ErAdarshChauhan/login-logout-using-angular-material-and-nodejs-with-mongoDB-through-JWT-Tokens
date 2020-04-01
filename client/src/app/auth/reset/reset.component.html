@@ -1,0 +1,53 @@
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+          <mat-card-content>
+              
+            <!-- <img mat-card-image src="../../../assets/images/login-logo-3.png" alt="Photo of a Shiba Inu"> -->
+            <img mat-card-image src="../../../assets/images/registration-logo-7.png" alt="Photo of a Shiba Inu">
+           </mat-card-content>
+        </div>
+        
+        <div class="col-sm">
+            <br><br><br><br>
+            <mat-toolbar>
+                <span class="title-center">Reset User Password</span> 
+            </mat-toolbar>
+            <br>
+                <mat-card class="card-align">
+                    <br>
+                    <mat-card-content class="card-content-align">
+                        
+                        <div class="example-container">
+                        <form [formGroup]="resetPasswordForm" (ngSubmit)="postResetForm()" class="example-form">
+                            <table class="">
+                                <mat-card-title class="text-danger"><h4>{{message}}</h4></mat-card-title>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Enter your Email</mat-label>
+                                            <input matInput placeholder="Your Registered Email" formControlName="email" class="form-contro" required>
+                                            <mat-error *ngIf="!resetPasswordForm.get('email') && !resetPasswordForm.get('email').touched "></mat-error>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="form-group text-center ">
+                                            <button mat-button  class="btn form-control mat-tab-label-active text-white"  [disabled]="!resetPasswordForm.valid">Reset Password</button>
+                                            &nbsp;
+                                            <button mat-button  class="btn form-control mat-tab-label-active text-white" (click)="resetForm()" [disabled]="!resetPasswordForm.valid">Reset</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </mat-card-content>
+                
+            </mat-card>
+    </div>
+</div>
+
+</div>
